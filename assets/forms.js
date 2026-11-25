@@ -17,7 +17,6 @@
   if (C.reserveUrl) {
     document.querySelectorAll('[data-reserve]').forEach(a => { a.href = C.reserveUrl; a.target = '_blank'; a.rel = 'noopener'; });
   } else {
-    const tel = C.phoneDisplay || C.phone;
     const css = `
     .otm{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(5,14,15,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
     .otm.open{display:flex}
@@ -26,12 +25,10 @@
     .otm-box h2{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:40px;line-height:1;margin:10px 0 26px}
     .otm-logo{display:inline-flex;align-items:center;gap:10px;font-family:Jost,system-ui,sans-serif;font-weight:600;font-size:30px;letter-spacing:-.01em;color:#231811}
     .otm-logo svg{width:34px;height:34px}
-    .otm-frame{margin:22px 0 24px;border:2px dashed rgba(35,24,17,.35);background:rgba(255,255,255,.45);padding:34px 20px;min-height:180px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+    .otm-frame{margin:22px 0 0;border:2px dashed rgba(35,24,17,.35);background:rgba(255,255,255,.45);padding:34px 20px;min-height:180px;display:flex;flex-direction:column;justify-content:center;gap:10px}
     .otm-frame b{font-size:17px;line-height:1.4}
     .otm-frame code{font-family:ui-monospace,Menlo,monospace;font-size:13px;letter-spacing:.04em;color:#a3261c}
     .otm-frame small{font-size:13px;line-height:1.5;color:#5a4634}
-    .otm-tel{display:inline-block;margin-top:4px;padding:14px 26px;background:#0d2629;color:#f3ead2;font-size:12px;letter-spacing:.22em;text-transform:uppercase;text-decoration:none}
-    .otm-tel:hover{background:#a3261c}
     .otm-x{position:absolute;right:14px;top:12px;width:38px;height:38px;font-size:20px;line-height:38px;color:#231811;background:none;border:0;cursor:pointer}`;
     const st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
     const m = document.createElement('div');
@@ -46,7 +43,6 @@
         <code>iframe / ${en ? 'interface' : 'Schnittstelle'} / ${en ? 'link' : 'Verlinkung'}</code>
         <small>${en ? 'Placeholder – activated as soon as the restaurant’s OpenTable account is set up.' : 'Platzhalter – wird aktiviert, sobald das OpenTable-Konto des Restaurants eingerichtet ist.'}</small>
       </div>
-      ${tel ? `<a class="otm-tel" href="tel:${C.phone.replace(/[^\d+]/g, '')}">${en ? 'Or call us' : 'Lieber anrufen'}: ${tel}</a>` : ''}
     </div>`;
     const mount = () => document.body.appendChild(m);
     document.body ? mount() : document.addEventListener('DOMContentLoaded', mount);
@@ -74,7 +70,6 @@
 
   /* Fehlermeldung mit Ausweichweg (Telefon) */
   function errorText() {
-    const tel = C.phoneDisplay || C.phone;
     return en
       ? `Sorry, your request could not be sent. Please try again${tel ? ` or call us on ${tel}` : ''}.`
       : `Leider konnte Ihre Anfrage nicht gesendet werden. Bitte versuchen Sie es noch einmal${tel ? ` oder rufen Sie uns an: ${tel}` : ''}.`;

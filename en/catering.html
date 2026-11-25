@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<script src="../assets/gate.js"></script>
+<title>Catering – Nithyanand Frankfurt</title>
+<meta name="description" content="Indian catering from Frankfurt: buffet, banana leaf feast or office lunch. Put together your menu and send us a no-obligation enquiry.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Caveat:wght@500;700&family=Jost:wght@400;500;600&family=Oswald:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* ================= HERO ================= */
+.hero{position:relative;background:var(--night);color:#efe6cf;padding:calc(var(--nav-h) + 70px) 0 140px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 45% 55% at 75% 45%,rgba(228,180,69,.16),transparent 65%);pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(40px,6vw,100px);align-items:center}
+.hero .kicker{color:var(--turmeric);margin-bottom:30px}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(54px,7.2vw,120px);line-height:.9}
+.hero h1 em{color:var(--gold);font-weight:500}
+.hero h1 .l{display:block;overflow:hidden;padding-bottom:.05em}
+.hero h1 .l > span{display:inline-block;transform:translateY(105%);animation:up 1.1s var(--ease) forwards}
+.hero h1 .l:nth-child(2) > span{animation-delay:.12s}
+@keyframes up{to{transform:none}}
+.hero .lead{font-size:clamp(17px,1.3vw,20px);line-height:1.7;max-width:520px;margin:32px 0 42px;color:rgba(239,230,207,.8)}
+.hero .acts{display:flex;gap:22px;flex-wrap:wrap}
+.facts{display:flex;gap:0;margin-top:56px;border-top:1px solid rgba(237,219,127,.2)}
+.facts div{flex:1;padding:20px 20px 0 0}
+.facts div + div{padding-left:20px;border-left:1px solid rgba(237,219,127,.2)}
+.facts b{display:block;font-family:var(--ticket);font-size:28px;font-weight:500;color:var(--gold)}
+.facts span{font-family:var(--sans);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(239,230,207,.6)}
+
+/* Frachtbrief-Karte */
+.docket{position:relative;justify-self:center;width:min(500px,100%)}
+.docket .plate{width:78%;aspect-ratio:1;border-radius:50%;margin-left:auto;padding:4%;background:radial-gradient(circle at 35% 30%,#c9c3b5,#8b8577 55%,#4a463e);box-shadow:0 40px 80px rgba(0,0,0,.5)}
+.docket .plate img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.docket .ring{position:absolute;right:-4%;top:-4%;width:86%;aspect-ratio:1;animation:spin 50s linear infinite;pointer-events:none}
+.docket .ring text{font-family:var(--sans);font-size:13px;letter-spacing:.5em;fill:var(--turmeric);text-transform:uppercase}
+@keyframes spin{to{transform:rotate(360deg)}}
+.slip{position:absolute;left:0;bottom:-30px;width:62%;background:var(--paper-2);color:var(--ink);padding:22px 22px 18px;transform:rotate(-4deg);box-shadow:0 30px 50px rgba(0,0,0,.45);font-family:var(--sans)}
+.slip::before{content:"";position:absolute;left:0;right:0;top:-8px;height:10px;background:radial-gradient(circle 5px at 50% 0,transparent 98%,var(--paper-2)) 0 0/12px 10px repeat-x;transform:scaleY(-1)}
+.slip h4{font-family:var(--ticket);font-size:13px;letter-spacing:.3em;font-weight:500;display:flex;justify-content:space-between;border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:10px}
+.slip dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:13px}
+.slip dt{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8a6d50;padding-top:3px}
+.slip dd{font-family:var(--ticket);font-size:15px;letter-spacing:.04em}
+.slip .stamp-c{position:absolute;right:-26px;top:-30px;width:84px;height:84px;color:var(--red);background:var(--paper-2);transform:rotate(14deg);font-family:var(--ticket);font-size:13px;letter-spacing:.1em;line-height:1.1}
+
+/* ================= FORMATE ================= */
+.formats{padding:150px 0 120px}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:70px}
+.sec-head .kicker{color:var(--chili-2);margin-bottom:22px}
+.sec-head h2{font-family:var(--serif);font-weight:600;font-size:clamp(42px,5vw,78px);line-height:.95}
+.sec-head h2 em{color:var(--chili-2)}
+.sec-head p{font-size:18px;line-height:1.7;color:var(--ink-soft);max-width:520px}
+.fmt-row{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.fmt{padding:44px 36px 46px;border-right:1px solid var(--line);position:relative;transition:background .4s}
+.fmt:last-child{border-right:0}
+.fmt:hover{background:rgba(255,250,236,.45)}
+.fmt .ic{width:58px;height:58px;color:var(--red);margin-bottom:26px}
+.fmt .no{position:absolute;right:30px;top:36px;font-family:var(--ticket);font-size:15px;color:var(--saffron)}
+.fmt h3{font-family:var(--serif);font-weight:600;font-size:clamp(30px,2.6vw,40px);line-height:1;margin-bottom:14px}
+.fmt p{font-size:16px;line-height:1.65;color:var(--ink-soft);margin-bottom:22px}
+.fmt ul{list-style:none;margin-bottom:30px}
+.fmt li{font-family:var(--sans);font-size:13px;letter-spacing:.04em;padding:9px 0;border-bottom:1px dashed var(--line);display:flex;gap:10px}
+.fmt li::before{content:"—";color:var(--saffron)}
+.fmt .pick{font-family:var(--sans);font-size:11px;letter-spacing:.24em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:4px;color:var(--chili-2)}
+.fmt.sel{background:rgba(255,250,236,.7)}
+.fmt.sel::after{content:"Selected";position:absolute;top:-1px;left:36px;background:var(--red);color:#fff;font-family:var(--sans);font-size:10px;letter-spacing:.24em;text-transform:uppercase;padding:5px 10px}
+
+/* ================= PLANER ================= */
+.planner{position:relative;background:var(--black);color:#efe6cf;padding:140px 0 130px}
+.planner .sec-head .kicker{color:var(--saffron)}
+.planner .sec-head h2 em{color:var(--gold)}
+.planner .sec-head p{color:rgba(239,230,207,.7)}
+.pl-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(30px,5vw,80px);align-items:start}
+.ctrl{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(234,122,42,.3);margin-bottom:36px}
+.ctrl label > span{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--saffron);margin-bottom:14px}
+.guests{display:flex;align-items:baseline;gap:14px}
+.guests output{font-family:var(--ticket);font-size:64px;line-height:1;color:var(--gold);min-width:2.4ch}
+.guests small{font-family:var(--sans);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(239,230,207,.6)}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:2px;background:linear-gradient(90deg,var(--red) var(--p,20%),rgba(239,230,207,.25) var(--p,20%));margin-top:18px;outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;background:var(--gold);border:0;transform:rotate(45deg);cursor:pointer}
+input[type=range]::-moz-range-thumb{width:18px;height:18px;background:var(--gold);border:0;border-radius:0;cursor:pointer}
+.seg{display:flex;border:1px solid rgba(237,219,127,.4)}
+.seg button{flex:1;padding:13px 6px;font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(239,230,207,.75);transition:.25s}
+.seg button + button{border-left:1px solid rgba(237,219,127,.4)}
+.seg button[aria-pressed=true]{background:var(--gold);color:var(--night)}
+.pl-cats{display:grid;gap:30px}
+.pl-cat h4{font-family:var(--serif);font-weight:700;font-size:18px;letter-spacing:.24em;text-transform:uppercase;color:var(--red);display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(234,122,42,.4);padding-bottom:8px;margin-bottom:12px}
+.pl-cat h4 small{font-family:var(--sans);font-size:10px;letter-spacing:.2em;color:rgba(239,230,207,.5);font-weight:400}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{font-family:var(--sans);font-size:13px;padding:9px 13px;border:1px solid rgba(239,230,207,.22);color:rgba(239,230,207,.85);display:inline-flex;gap:8px;align-items:center;transition:all .2s}
+.opt:hover{border-color:var(--gold);color:var(--gold)}
+.opt[aria-pressed=true]{background:var(--gold);color:var(--night);border-color:var(--gold)}
+.opt .v{width:7px;height:7px;background:#7fae5a}
+.opt[aria-pressed=true] .v{background:var(--leaf)}
+.opt .c{color:var(--red);font-size:11px}
+
+/* Ergebnis-Zettel */
+.sheet{position:sticky;top:calc(var(--nav-h) + 24px);background:var(--paper-2);color:var(--ink);padding:30px 28px 26px}
+.sheet::before,.sheet::after{content:"";position:absolute;left:0;right:0;height:10px;background:radial-gradient(circle 5px at 50% 0,transparent 98%,var(--paper-2)) 0 0/12px 10px repeat-x}
+.sheet::before{top:-9px;transform:scaleY(-1)}
+.sheet::after{bottom:-9px}
+.sheet .hd{text-align:center;border-bottom:1px dashed var(--ink);padding-bottom:16px;margin-bottom:16px}
+.sheet .hd .logo-mask{height:40px;width:80px;margin:0 auto 4px;color:var(--red)}
+.sheet .hd b{font-family:var(--ticket);font-size:12px;letter-spacing:.34em;font-weight:500}
+.sheet .row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;font-family:var(--sans);font-size:13px;gap:10px}
+.sheet .row span:first-child{letter-spacing:.14em;text-transform:uppercase;font-size:11px;color:#8a6d50}
+.sheet .row b{font-family:var(--ticket);font-weight:500;font-size:17px;text-align:right}
+.sheet .bar{height:6px;background:rgba(70,45,20,.15);margin:4px 0 10px;position:relative}
+.sheet .bar i{position:absolute;left:0;top:0;bottom:0;background:var(--red);transition:width .5s var(--ease)}
+.sheet .bar i.ok{background:var(--leaf)}
+.sheet ul{list-style:none;border-top:1px dashed var(--ink);margin-top:10px;padding-top:10px;min-height:60px}
+.sheet li{font-family:var(--ticket);font-size:14px;letter-spacing:.06em;text-transform:uppercase;padding:5px 0;display:flex;justify-content:space-between;gap:10px}
+.sheet li small{font-family:var(--sans);font-size:10px;letter-spacing:.14em;color:#8a6d50}
+.sheet .empty{font-family:var(--hand);font-size:22px;color:var(--chili-2);text-transform:none;letter-spacing:0}
+.sheet .tip{font-size:14px;line-height:1.5;font-style:italic;color:var(--chili-2);border-top:1px dashed var(--ink);margin-top:12px;padding-top:12px;min-height:20px}
+.sheet .btn{width:100%;justify-content:center;margin-top:18px}
+.sheet .note{font-family:var(--sans);font-size:11px;color:#8a6d50;text-align:center;margin-top:12px;letter-spacing:.04em}
+
+/* ================= ANFRAGE ================= */
+.req{padding:150px 0 140px}
+.req-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,6vw,110px)}
+.req-side .kicker{color:var(--chili-2);margin-bottom:22px}
+.req-side h2{font-family:var(--serif);font-weight:600;font-size:clamp(42px,4.6vw,72px);line-height:.95;margin-bottom:24px}
+.req-side h2 em{color:var(--chili-2)}
+.req-side p{font-size:18px;line-height:1.7;color:var(--ink-soft);margin-bottom:34px}
+.contact{border-top:1px solid var(--ink)}
+.contact div{padding:16px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;font-family:var(--sans);font-size:14px}
+.contact span{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#8a6d50}
+.form{position:relative;border:1px solid var(--ink);padding:clamp(26px,4vw,54px);background:rgba(255,250,236,.35)}
+.prog{display:grid;grid-template-columns:repeat(3,1fr);margin:-1px -1px 40px;border-bottom:1px solid var(--ink)}
+.form .prog{margin:calc(-1 * clamp(26px,4vw,54px)) calc(-1 * clamp(26px,4vw,54px)) 44px}
+.prog button{padding:18px 20px;text-align:left;font-family:var(--sans);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#9b8468;border-right:1px solid var(--line);position:relative}
+.prog button:last-child{border-right:0}
+.prog button b{display:block;font-family:var(--ticket);font-size:22px;letter-spacing:0;font-weight:500;margin-bottom:2px}
+.prog button.on{color:var(--ink);background:var(--paper-2)}
+.prog button.on b{color:var(--red)}
+.prog button.done b::after{content:" ✓";color:var(--leaf);font-size:16px}
+.prog button::after{content:"";position:absolute;left:0;bottom:-1px;height:3px;width:0;background:var(--red);transition:width .5s var(--ease)}
+.prog button.on::after{width:100%}
+.stepbox{display:none;animation:sf .5s var(--ease)}
+.stepbox.on{display:block}
+@keyframes sf{from{opacity:0;transform:translateX(20px)}}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:30px 34px}
+.fgrid .full{grid-column:1/-1}
+.choice{display:flex;flex-wrap:wrap;gap:10px}
+.choice label{cursor:pointer}
+.choice input{position:absolute;opacity:0;pointer-events:none}
+.choice span{display:inline-block;font-family:var(--sans);font-size:13px;padding:11px 16px;border:1px solid var(--ink);transition:.2s}
+.choice input:checked + span{background:var(--ink);color:var(--paper-2)}
+.choice input:focus-visible + span{outline:2px solid var(--saffron);outline-offset:2px}
+.choice label:hover span{background:rgba(35,24,17,.08)}
+.choice input:checked + span:hover{background:var(--ink)}
+.consent{display:flex;gap:14px;align-items:flex-start;font-size:14px;line-height:1.5;color:var(--ink-soft);cursor:pointer}
+.consent input{appearance:none;-webkit-appearance:none;width:18px;height:18px;border:1.5px solid var(--ink);flex-shrink:0;margin-top:2px;display:grid;place-items:center;cursor:pointer}
+.consent input:checked{background:var(--ink)}
+.consent input:checked::after{content:"";width:8px;height:4px;border-left:2px solid var(--paper-2);border-bottom:2px solid var(--paper-2);transform:rotate(-45deg) translate(1px,-1px)}
+.fnav{display:flex;justify-content:space-between;align-items:center;margin-top:44px;gap:20px}
+.fnav .back{font-family:var(--sans);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft)}
+.fnav .back:hover{color:var(--ink)}
+.from-plan{display:none;margin-top:6px;font-family:var(--sans);font-size:13px;padding:14px 16px;border-left:3px solid var(--red);background:rgba(216,35,31,.06)}
+.from-plan.show{display:block}
+.err{border-bottom-color:var(--red)!important}
+.done{display:none;text-align:center;padding:30px 0 10px}
+.done.show{display:block;animation:sf .6s var(--ease)}
+.done .stamp-c{width:150px;height:150px;margin:0 auto 26px;color:var(--leaf);transform:rotate(-10deg);font-family:var(--ticket);font-size:18px;letter-spacing:.14em;line-height:1.2;animation:stamp .5s cubic-bezier(.3,1.6,.5,1)}
+@keyframes stamp{from{transform:rotate(-10deg) scale(2);opacity:0}}
+.done h3{font-family:var(--serif);font-size:44px;font-weight:600;line-height:1}
+.done p{max-width:440px;margin:16px auto 24px;color:var(--ink-soft);line-height:1.7}
+.done pre{font-family:var(--ticket);font-size:14px;letter-spacing:.04em;text-align:left;background:var(--paper-2);padding:20px;max-width:440px;margin:0 auto 26px;white-space:pre-wrap;border:1px dashed var(--ink)}
+
+/* FAQ */
+.faq{padding:0 0 150px}
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,6vw,110px)}
+.faq h2{font-family:var(--serif);font-weight:600;font-size:clamp(38px,4vw,60px);line-height:1}
+.faq h2 em{color:var(--chili-2)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-child{border-top:1px solid var(--ink)}
+.faq summary{list-style:none;cursor:pointer;padding:24px 50px 24px 0;font-family:var(--serif);font-weight:600;font-size:clamp(21px,1.8vw,26px);position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:6px;top:18px;font-family:var(--sans);font-weight:300;font-size:30px;color:var(--red);transition:transform .3s var(--ease)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 50px 26px 0;font-size:17px;line-height:1.7;color:var(--ink-soft)}
+
+@media (max-width:1100px){.fmt-row{grid-template-columns:1fr}.fmt{border-right:0;border-bottom:1px solid var(--line)}.fmt:last-child{border-bottom:0}}
+@media (max-width:980px){
+  .hero .wrap,.sec-head,.pl-grid,.req-grid,.faq-grid{grid-template-columns:1fr}
+  .docket{width:min(420px,92%);margin-bottom:40px}
+  .sheet{position:relative;top:0}
+}
+@media (max-width:600px){
+  .ctrl{grid-template-columns:1fr;gap:30px}
+  .fgrid{grid-template-columns:1fr}
+  .prog button{padding:14px 10px;font-size:9px;letter-spacing:.14em}
+  .facts{flex-wrap:wrap}
+  .slip{width:76%}
+}
+</style>
+</head>
+<body class="paper">
+
+<header class="nav">
+  <a href="index.html" class="brand" aria-label="Nithyanand home"><span class="logo-mask" style="width:80px"></span><small>spice. life. curry</small></a>
+  <button class="burger" aria-label="Open menu"><span></span><span></span></button>
+  <ul>
+    <li><a href="index.html#kueste">Restaurant</a></li>
+    <li><a href="speisekarte.html">Menu</a></li>
+    <li><a href="catering.html" aria-current="page">Catering</a></li>
+    <li><a href="feste.html">Celebrations</a></li>
+    <li><a href="index.html#frankfurt" class="nav-cta" data-reserve>Book a table</a></li>
+    <li class="lang-sw"><a href="../catering.html" lang="de" hreflang="de">DE</a><span>/</span><a href="catering.html" lang="en" hreflang="en" aria-current="true">EN</a></li>
+  </ul>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="kicker">Catering from Frankfurt</div>
+      <h1><span class="l"><span>Udupi comes</span></span><span class="l"><span><em>to you.</em></span></span></h1>
+      <p class="lead">Curries from the pot, naan from the tandoor, lassi for everyone: we cook fresh in our own kitchen and bring the feast to you – at the office, in the garden or in the banquet hall.</p>
+      <div class="acts">
+        <a href="#planer" class="btn gold solid">Build your menu <i class="arr"></i></a>
+        <a href="#anfrage" class="btn gold">Enquire now</a>
+      </div>
+      <div class="facts">
+        <div><b>44</b><span>Dishes to choose from</span></div>
+        <div><b>27</b><span>of them vegetarian</span></div>
+        <div><b>14</b><span>Allergens labelled</span></div>
+      </div>
+    </div>
+    <div class="docket rv">
+      <svg class="ring" viewBox="0 0 400 400" aria-hidden="true"><defs><path id="rp" d="M200,200 m-180,0 a180,180 0 1,1 360,0 a180,180 0 1,1 -360,0"/></defs><text><textPath href="#rp">freshly cooked · delivered hot · served with love · </textPath></text></svg>
+      <div class="plate"><img src="../assets/food.jpg" alt="Masala dosa with sambar and chutneys on a banana leaf"></div>
+      <div class="slip">
+        <h4><span>WAYBILL</span><span>Nº 314</span></h4>
+        <dl>
+          <dt>From</dt><dd>Launhardtstraße 2–4</dd>
+          <dt>To</dt><dd>Your celebration</dd>
+          <dt>Contents</dt><dd>Endless joy</dd>
+        </dl>
+        <div class="stamp-c">HOT<br>&amp; FRESH</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATE -->
+<section class="formats" id="formate">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="kicker">Three formats</div><h2>How shall we<br><em>serve it?</em></h2></div>
+      <p>From a quick team lunch to a grand celebration feast: choose a format and we will tailor quantities, timing and service to your occasion.</p>
+    </div>
+    <div class="fmt-row" id="fmtRow">
+      <article class="fmt rv" data-fmt="Buffet">
+        <span class="no">01</span>
+        <svg class="ic" viewBox="0 0 58 58" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 40h50M8 40c0-12 9-21 21-21s21 9 21 21"/><path d="M29 19v-5M25 14h8"/><path d="M4 46h50"/></svg>
+        <h3>Buffet</h3>
+        <p>Several curries, rice, naan and sides in chafing dishes – everyone helps themselves to what they like.</p>
+        <ul><li>Ideal for larger groups</li><li>Vegetarian & meat selection</li><li>With or without service staff</li></ul>
+        <button class="pick" type="button">Choose this format</button>
+      </article>
+      <article class="fmt rv d1" data-fmt="Bananenblatt-Menü">
+        <span class="no">02</span>
+        <svg class="ic" viewBox="0 0 58 58" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 34C12 14 40 10 55 18 52 36 30 48 3 34Z"/><path d="M3 34C20 30 38 24 55 18"/><circle cx="22" cy="24" r="3"/><circle cx="32" cy="22" r="3"/><circle cx="30" cy="34" r="5"/></svg>
+        <h3>Banana leaf</h3>
+        <p>The traditional festive meal from Udupi, served at your seat, course by course. The highlight for weddings and family celebrations.</p>
+        <ul><li>Served at the table</li><li>Traditional order of courses</li><li>With service staff</li></ul>
+        <button class="pick" type="button">Choose this format</button>
+      </article>
+      <article class="fmt rv d2" data-fmt="Büro-Lunch">
+        <span class="no">03</span>
+        <svg class="ic" viewBox="0 0 58 58" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="20" width="46" height="28"/><path d="M6 30h46M29 20v28"/><path d="M20 20v-6h18v6"/></svg>
+        <h3>Office lunch</h3>
+        <p>Lunch for your team, delivered at lunchtime and labelled with all allergens. Easy and on time.</p>
+        <ul><li>For meetings & team days</li><li>Allergens on every dish</li><li>Delivery & collection</li></ul>
+        <button class="pick" type="button">Choose this format</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PLANER -->
+<section class="planner" id="planer">
+  <div class="tear top" data-color="#0b0a09"></div>
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="kicker">Menu planner</div><h2>Put together<br><em>your menu.</em></h2></div>
+      <p>Set the number of guests, choose your dishes – the planner suggests a well-balanced selection. One click carries your draft over to the enquiry.</p>
+    </div>
+    <div class="pl-grid">
+      <div>
+        <div class="ctrl">
+          <label><span>Number of guests</span>
+            <div class="guests"><output id="gOut">40</output><small>People</small></div>
+            <input type="range" id="guests" min="10" max="300" step="5" value="40" aria-label="Number of guests">
+          </label>
+          <div><span style="display:block;font-family:var(--sans);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--saffron);margin-bottom:14px">Vegetarian share</span>
+            <div class="seg" id="vegSeg" role="group" aria-label="Vegetarian share">
+              <button type="button" data-v="0" aria-pressed="false">Mixed</button>
+              <button type="button" data-v="50" aria-pressed="true">Half / half</button>
+              <button type="button" data-v="100" aria-pressed="false">Veg only</button>
+            </div>
+          </div>
+        </div>
+        <div class="pl-cats" id="plCats"></div>
+      </div>
+      <aside class="sheet" aria-live="polite">
+        <div class="hd"><span class="logo-mask"></span><b>YOUR DRAFT</b></div>
+        <div class="row"><span>Format</span><b id="sFmt">Not chosen yet</b></div>
+        <div class="row"><span>Guests</span><b id="sG">40</b></div>
+        <div class="row"><span>Mains</span><b id="sC">0 / 4</b></div>
+        <div class="bar"><i id="sBar" style="width:0"></i></div>
+        <div class="row"><span>Bread</span><b id="sB">approx. 60 pieces</b></div>
+        <div class="row"><span>Rice</span><b>included</b></div>
+        <ul id="sList"><li class="empty">Nothing selected yet …</li></ul>
+        <p class="tip" id="sTip"></p>
+        <a href="#anfrage" class="btn red solid" id="toReq">Request this draft <i class="arr"></i></a>
+        <p class="note">Price on personal quotation</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ANFRAGE -->
+<section class="req" id="anfrage">
+  <div class="wrap req-grid">
+    <div class="req-side">
+      <div class="kicker">No-obligation enquiry</div>
+      <h2>Tell us about<br><em>your celebration.</em></h2>
+      <p>Three short steps – then we will get back to you personally with a proposal and a quotation.</p>
+      <div class="contact">
+        <div><span>Address</span>Launhardtstraße 2–4, 60314 Frankfurt</div>
+        <div data-phone-row><span>Phone</span><a href="tel:" data-phone></a></div>
+        <div><span>Reply</span>personal, no bot</div>
+      </div>
+    </div>
+
+    <form class="form" id="form" novalidate>
+      <div class="prog" id="prog">
+        <button type="button" data-s="0" class="on"><b>01</b>Occasion</button>
+        <button type="button" data-s="1"><b>02</b>Venue & service</button>
+        <button type="button" data-s="2"><b>03</b>Contact</button>
+      </div>
+
+      <div class="stepbox on" data-step="0">
+        <div class="fgrid">
+          <div class="field full"><span>Occasion</span>
+            <div class="choice" id="anlass">
+              <label><input type="radio" name="anlass" value="Hochzeit"><span>Wedding</span></label>
+              <label><input type="radio" name="anlass" value="Geburtstag"><span>Birthday</span></label>
+              <label><input type="radio" name="anlass" value="Firmenfeier"><span>Company event</span></label>
+              <label><input type="radio" name="anlass" value="Diwali & Onam"><span>Diwali & Onam</span></label>
+              <label><input type="radio" name="anlass" value="Privates Dinner"><span>Private dinner</span></label>
+              <label><input type="radio" name="anlass" value="Sonstiges"><span>Other</span></label>
+            </div><small data-err="anlass"></small>
+          </div>
+          <label class="field"><span>Date</span><input type="date" name="datum" id="datum"><small data-err="datum"></small></label>
+          <label class="field"><span>Number of guests</span><input type="number" name="gaeste" id="fGuests" min="5" max="1000" value="40" inputmode="numeric"><small data-err="gaeste"></small></label>
+          <div class="field full"><span>Format</span>
+            <div class="choice" id="fFmt">
+              <label><input type="radio" name="format" value="Buffet"><span>Buffet</span></label>
+              <label><input type="radio" name="format" value="Bananenblatt-Menü"><span>Banana leaf feast</span></label>
+              <label><input type="radio" name="format" value="Büro-Lunch"><span>Office lunch</span></label>
+              <label><input type="radio" name="format" value="Beratung"><span>Not sure yet</span></label>
+            </div>
+          </div>
+          <div class="from-plan full" id="fromPlan"></div>
+        </div>
+      </div>
+
+      <div class="stepbox" data-step="1">
+        <div class="fgrid">
+          <div class="field full"><span>Where are you celebrating?</span>
+            <div class="choice">
+              <label><input type="radio" name="ort" value="Bei Nithyanand im Restaurant"><span>At your restaurant</span></label>
+              <label><input type="radio" name="ort" value="Lieferung zu uns" checked><span>Deliver to us</span></label>
+            </div>
+          </div>
+          <label class="field" id="plzF"><span>Postcode & town</span><input type="text" name="plz" placeholder="e.g. 60314 Frankfurt" autocomplete="postal-code"><small data-err="plz"></small></label>
+          <label class="field"><span>Time</span><input type="time" name="zeit"></label>
+          <div class="field full"><span>Service</span>
+            <div class="choice">
+              <label><input type="checkbox" name="service" value="Service-Personal"><span>Service staff</span></label>
+              <label><input type="checkbox" name="service" value="Geschirr & Besteck"><span>Crockery & cutlery</span></label>
+              <label><input type="checkbox" name="service" value="Dekoration"><span>Decoration</span></label>
+              <label><input type="checkbox" name="service" value="Getränke"><span>Drinks & lassi</span></label>
+            </div>
+          </div>
+          <label class="field full"><span>Allergies & requests</span><textarea name="wuensche" placeholder="e.g. 5 vegan guests, one child with a nut allergy …"></textarea></label>
+        </div>
+      </div>
+
+      <div class="stepbox" data-step="2">
+        <div class="fgrid">
+          <label class="field"><span>Name</span><input type="text" name="name" autocomplete="name"><small data-err="name"></small></label>
+          <label class="field"><span>Phone</span><input type="tel" name="tel" autocomplete="tel"></label>
+          <label class="field full"><span>Email</span><input type="email" name="email" autocomplete="email"><small data-err="email"></small></label>
+          <label class="consent full"><input type="checkbox" name="dsgvo"><span>I agree that my details may be stored to process this enquiry. More in our <a href="#" style="text-decoration:underline">privacy policy</a>.</span></label>
+          <small data-err="dsgvo" class="full" style="font-family:var(--sans);font-size:12px;color:var(--chili-2)"></small>
+        </div>
+      </div>
+
+      <div class="fnav" id="fnav">
+        <button type="button" class="back" id="back" style="visibility:hidden">← Back</button>
+        <button type="button" class="btn solid" id="next">Next <i class="arr"></i></button>
+      </div>
+
+      <div class="done" id="done">
+        <div class="stamp-c">ENQUIRY<br>RECEIVED</div>
+        <h3>Dhanyavaad!</h3>
+        <p>Thank you for your enquiry. We will be in touch personally – with a proposal made for your celebration.</p>
+        <pre id="summary"></pre>
+        <a href="speisekarte.html" class="btn">View the menu</a>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap faq-grid">
+    <div><div class="kicker" style="color:var(--chili-2);margin-bottom:22px">Good to know</div><h2>Frequently asked<br><em>questions.</em></h2></div>
+    <div>
+      <details><summary>How far in advance should I enquire?</summary><p>The earlier, the better – especially for weddings and weekend celebrations. Just get in touch; we are happy to check short-notice dates too.</p></details>
+      <details><summary>Can you cater for allergies?</summary><p>Yes. Every dish on our menu is labelled with the 14 major allergens. List your guests’ allergies and intolerances in your enquiry – we will tailor the menu accordingly.</p></details>
+      <details><summary>Are there vegetarian and vegan options?</summary><p>South Indian cuisine is naturally rich in vegetarian dishes – they make up more than half of our menu. For vegan requests, please talk to us directly.</p></details>
+      <details><summary>Where do you deliver?</summary><p>We deliver in Frankfurt and the surrounding area. Simply include your postcode in the enquiry.</p></details>
+      <details><summary>How much does catering cost?</summary><p>That depends on the format, number of guests and menu. After your enquiry you will receive a personal, transparent quotation.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div><span class="logo-mask" style="width:110px"></span><p>spice. life. curry.<br>South Indian cuisine from Udupi – in the heart of Frankfurt.</p></div>
+    <div><h5>Visit</h5><p>Launhardtstraße 2–4<br>60314 Frankfurt</p></div>
+    <div><h5>Discover</h5><a href="speisekarte.html">Menu</a><a href="catering.html">Catering</a><a href="feste.html">Celebrations & events</a><a href="index.html#frankfurt" data-reserve>Book a table</a></div>
+    <div><h5>Follow</h5><a href="#">Instagram</a><a href="#">Google</a></div>
+  </div>
+  <div class="legal"><span>© 2026 Nithyanand · Frankfurt am Main</span><span><a href="#" style="display:inline">Legal notice</a> · <a href="#" style="display:inline">Privacy</a></span></div>
+</footer>
+
+<script src="../assets/menu-data.js"></script>
+<script src="../assets/site.js"></script>
+<script>
+const {$,$$}=NY;
+const plan={fmt:null,guests:40,veg:50,sel:new Set()};
+/* English display names for the (German) format values */
+const FMT_EN={'Buffet':'Buffet','Bananenblatt-Menü':'Banana leaf feast','Büro-Lunch':'Office lunch'};
+
+/* ---------- Formate ---------- */
+$('#fmtRow').addEventListener('click',e=>{const b=e.target.closest('.pick');if(!b)return;const f=b.closest('.fmt');
+  plan.fmt=f.dataset.fmt;$$('.fmt').forEach(x=>x.classList.toggle('sel',x===f));
+  const r=$(`#fFmt input[value="${plan.fmt}"]`);if(r)r.checked=true;updateSheet();
+  document.getElementById('planer').scrollIntoView({behavior:'smooth'});});
+
+/* ---------- Planer ---------- */
+const PCATS=CATS.filter(c=>['veg','chicken','lamm','fisch','brot'].includes(c.id));
+$('#plCats').innerHTML=PCATS.map(c=>`<div class="pl-cat"><h4>${c.en}<small>${c.id==='brot'?'Side':'Main'}</small></h4><div class="opts">${c.items.map(it=>
+  `<button type="button" class="opt" data-no="${it[0]}" data-cat="${c.id}" aria-pressed="false">${it[6].v?'<i class="v" title="vegetarian"></i>':''}${Array.isArray(it[1])?it[1][1]:it[1]}${it[6].s?'<span class="c" title="spicy">✺</span>':''}</button>`).join('')}</div></div>`).join('');
+const NAME={};PCATS.forEach(c=>c.items.forEach(it=>NAME[it[0]]={n:Array.isArray(it[1])?it[1][1]:it[1],de:Array.isArray(it[1])?it[1][0]:it[1],cat:c.id,v:!!it[6].v}));
+const target=g=>g<=25?3:g<=60?4:g<=120?5:6;
+$('#plCats').addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b)return;const no=+b.dataset.no;
+  plan.sel.has(no)?plan.sel.delete(no):plan.sel.add(no);b.setAttribute('aria-pressed',plan.sel.has(no));updateSheet();});
+const range=$('#guests');
+range.addEventListener('input',()=>{plan.guests=+range.value;$('#gOut').textContent=plan.guests;$('#fGuests').value=plan.guests;updateSheet();});
+$('#vegSeg').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;plan.veg=+b.dataset.v;$$('#vegSeg button').forEach(x=>x.setAttribute('aria-pressed',x===b));updateSheet();});
+function updateSheet(){
+  range.style.setProperty('--p',((plan.guests-10)/290*100)+'%');
+  const mains=[...plan.sel].filter(n=>NAME[n].cat!=='brot'), breads=[...plan.sel].filter(n=>NAME[n].cat==='brot');
+  const t=target(plan.guests), veg=mains.filter(n=>NAME[n].v).length, meat=mains.length-veg;
+  $('#sFmt').textContent=plan.fmt?(FMT_EN[plan.fmt]||plan.fmt):'Not chosen yet';$('#sG').textContent=plan.guests;
+  $('#sC').textContent=`${mains.length} / ${t}`;
+  const bar=$('#sBar');bar.style.width=Math.min(100,mains.length/t*100)+'%';bar.classList.toggle('ok',mains.length>=t);
+  $('#sB').textContent=`approx. ${Math.ceil(plan.guests*1.5/5)*5} pieces`;
+  $('#sList').innerHTML=plan.sel.size?[...plan.sel].map(n=>`<li>${NAME[n].n}<small>${NAME[n].cat==='brot'?'Bread':NAME[n].v?'veg.':''}</small></li>`).join(''):'<li class="empty">Nothing selected yet …</li>';
+  let tip='';
+  if(plan.veg===100&&meat) tip='You chose “veg only”, but your draft includes meat dishes.';
+  else if(plan.veg===50&&mains.length>=2&&(veg===0||meat===0)) tip='Tip: for “half / half”, choose at least one vegetarian and one meat dish.';
+  else if(mains.length<t) tip=`For ${plan.guests} guests we recommend ${t} mains – ${t-mains.length} to go.`;
+  else if(!breads.length) tip='How about some bread? Garlic naan always goes down well.';
+  else if(mains.length>t+2) tip='Quite a selection! We are happy to advise on what pairs well.';
+  else tip='Looks delicious. ✦';
+  $('#sTip').textContent=tip;
+  syncFromPlan();
+}
+function planText(de){if(!plan.sel.size)return '';return [...plan.sel].map(n=>de?NAME[n].de:NAME[n].n).join(', ');}
+function syncFromPlan(){const t=planText(),el=$('#fromPlan');el.classList.toggle('show',!!t);el.innerHTML=t?`<b>From the menu planner:</b> ${t}`:'';}
+updateSheet();
+
+/* ---------- Formular ---------- */
+const form=$('#form');let step=0;
+const qs=new URLSearchParams(location.search),map={hochzeit:'Hochzeit',geburtstag:'Geburtstag',firma:'Firmenfeier',diwali:'Diwali & Onam',privat:'Privates Dinner'};
+if(qs.get('ort')==='restaurant'){const r=$('input[name=ort][value^="Bei Nith"]');if(r){r.checked=true;$('#plzF').style.display='none';}}
+if(map[qs.get('anlass')]){const r=$(`#anlass input[value="${map[qs.get('anlass')]}"]`);if(r)r.checked=true;}
+const today=new Date();today.setDate(today.getDate()+1);$('#datum').min=today.toISOString().slice(0,10);
+$('#fGuests').addEventListener('input',e=>{const v=Math.max(10,Math.min(300,+e.target.value||10));range.value=v;plan.guests=v;$('#gOut').textContent=v;updateSheet();});
+form.addEventListener('change',e=>{if(e.target.name==='ort')$('#plzF').style.display=e.target.value.startsWith('Bei Nith')?'none':'';if(e.target.name==='format'){plan.fmt=e.target.value==='Beratung'?null:e.target.value;$$('.fmt').forEach(x=>x.classList.toggle('sel',x.dataset.fmt===plan.fmt));updateSheet();}});
+
+function err(name,msg){const s=$(`[data-err="${name}"]`);if(s)s.textContent=msg||'';const i=form.elements[name];if(i&&i.classList)i.classList.toggle('err',!!msg);return !msg;}
+function validate(s){
+  const f=form.elements;let ok=true;
+  if(s===0){ok&=err('anlass',f.anlass.value?'':'Please choose an occasion.');
+    ok&=err('datum',!f.datum.value?'Please enter a date.':(f.datum.value<f.datum.min?'This date is in the past.':''));
+    ok&=err('gaeste',+f.gaeste.value>=5?'':'Minimum of 5 guests.');}
+  if(s===1&&!f.ort.value.startsWith('Bei Nith')) ok&=err('plz',/\d{5}/.test(f.plz.value)?'':'Please enter a postcode.');
+  if(s===2){ok&=err('name',f.name.value.trim().length>1?'':'Please enter your name.');
+    ok&=err('email',/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.email.value)?'':'Please enter a valid email address.');
+    ok&=err('dsgvo',f.dsgvo.checked?'':'Please agree to the processing of your data.');}
+  return !!ok;
+}
+function go(s){
+  step=s;$$('.stepbox').forEach(b=>b.classList.toggle('on',+b.dataset.step===s));
+  $$('#prog button').forEach((b,i)=>{b.classList.toggle('on',i===s);b.classList.toggle('done',i<s);});
+  $('#back').style.visibility=s?'visible':'hidden';
+  $('#next').innerHTML=s===2?'Send enquiry <i class="arr"></i>':'Next <i class="arr"></i>';
+  const top=form.getBoundingClientRect().top;if(top<80)scrollTo({top:scrollY+top-110,behavior:'smooth'});
+}
+$('#next').addEventListener('click',()=>{if(!validate(step))return;if(step<2)go(step+1);else submit();});
+$('#back').addEventListener('click',()=>go(step-1));
+$('#prog').addEventListener('click',e=>{const b=e.target.closest('[data-s]');if(!b)return;const s=+b.dataset.s;if(s<=step||validate(step)&&s===step+1)go(s);});
+form.addEventListener('input',e=>{if(e.target.classList.contains('err'))err(e.target.name,'');});
+
+let sending=false;
+async function submit(){
+  if(sending)return;
+  const f=form.elements,svc=[...form.querySelectorAll('input[name=service]:checked')].map(i=>i.value);
+  const dt=new Date(f.datum.value+'T12:00');
+  /* Email to the restaurant stays in German (staff read German); only the on-page summary is English */
+  const d=dt.toLocaleDateString('de-DE',{weekday:'short',day:'2-digit',month:'2-digit',year:'numeric'});
+  const dEn=dt.toLocaleDateString('en-GB',{weekday:'short',day:'2-digit',month:'short',year:'numeric'});
+  const lines=[`ANLASS   ${f.anlass.value}`,`DATUM    ${d}${f.zeit.value?' · '+f.zeit.value+' Uhr':''}`,`GÄSTE    ${f.gaeste.value}`,`FORMAT   ${f.format.value||'Beratung'}`,
+    `ORT      ${f.ort.value}${f.plz.value&&!f.ort.value.startsWith('Bei Nith')?' · '+f.plz.value:''}`];
+  if(svc.length)lines.push(`SERVICE  ${svc.join(', ')}`);
+  if(plan.sel.size)lines.push(`MENÜ     ${planText(true)}`);
+  lines.push(`KONTAKT  ${f.name.value}`);
+  if(f.wuensche.value.trim())lines.push(`WÜNSCHE  ${f.wuensche.value.trim()}`);
+  const nx=$('#next'),old=nx.innerHTML;sending=true;nx.disabled=true;nx.textContent='Sending …';
+  try{
+    await NYForm.send(`${f.ort.value.startsWith('Bei Nith')?'Fest-Anfrage (im Restaurant)':'Catering-Anfrage'} von ${f.name.value.trim()}: ${f.anlass.value}, ${d}, ${f.gaeste.value} Gäste`,
+      NYForm.cateringFields(f,{services:svc,dishes:plan.sel.size?planText(true):'',veg:plan.veg}),f.email.value.trim());
+  }catch(e){sending=false;nx.disabled=false;nx.innerHTML=old;err('dsgvo',NYForm.errorText());return;}
+  sending=false;nx.disabled=false;nx.innerHTML=old;
+  const OCC={'Hochzeit':'Wedding','Geburtstag':'Birthday','Firmenfeier':'Company event','Privates Dinner':'Private dinner','Sonstiges':'Other'};
+  const fv=f.format.value,svcEn={'Service-Personal':'Service staff','Geschirr & Besteck':'Crockery & cutlery','Dekoration':'Decoration','Getränke':'Drinks & lassi'};
+  const view=[`OCCASION ${OCC[f.anlass.value]||f.anlass.value}`,`DATE     ${dEn}${f.zeit.value?' · '+f.zeit.value:''}`,`GUESTS   ${f.gaeste.value}`,`FORMAT   ${fv&&fv!=='Beratung'?(FMT_EN[fv]||fv):'Advice wanted'}`,
+    `VENUE    ${f.ort.value.startsWith('Bei Nith')?'At Nithyanand':'Delivery'+(f.plz.value?' · '+f.plz.value:'')}`];
+  if(svc.length)view.push(`SERVICE  ${svc.map(v=>svcEn[v]||v).join(', ')}`);
+  if(plan.sel.size)view.push(`MENU     ${planText()}`);
+  view.push(`CONTACT  ${f.name.value}`);
+  $('#summary').textContent=view.join('\n');
+  $$('.stepbox,#prog,#fnav').forEach(x=>x.style.display='none');$('#done').classList.add('show');
+  scrollTo({top:form.getBoundingClientRect().top+scrollY-110,behavior:'smooth'});
+}
+$('#toReq').addEventListener('click',()=>setTimeout(()=>{$('#fGuests').value=plan.guests;},0));
+</script>
+<script src="../assets/config.js"></script>
+<script src="../assets/forms.js"></script>
+</body>
+</html>

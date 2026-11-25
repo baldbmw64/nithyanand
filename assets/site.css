@@ -1,0 +1,133 @@
+/* ==========================================================
+   Nithyanand – gemeinsame Designsprache (Unterseiten)
+   „Udupi Print“: Druck-Ästhetik der echten Speisekarte –
+   eckige Kanten, Ornament-Ecken, Sperrschrift, Stempel.
+   ========================================================== */
+:root{
+  --night:#0d2629; --night-2:#12343a; --black:#0b0a09;
+  --paper:#ecdcb8; --paper-2:#f4e9d0; --paper-3:#e2cc9c;
+  --chili:#7e1914; --chili-2:#9a2219; --red:#d8231f; --saffron:#ea7a2a;
+  --turmeric:#e4b445; --gold:#eddb7f; --brass:#b8862b; --leaf:#3c5b2b;
+  --ink:#231811; --ink-soft:#5a4634; --line:rgba(70,45,20,.22);
+  --serif:"Cormorant Garamond",Georgia,serif; --body:"Spectral",Georgia,serif;
+  --sans:"Jost",system-ui,sans-serif; --hand:"Caveat",cursive; --ticket:"Oswald",Impact,sans-serif;
+  --dev:"Kohinoor Devanagari","Noto Sans Devanagari",serif;
+  --ease:cubic-bezier(.2,.7,.1,1);
+  --nav-h:72px; --gutter:clamp(20px,4.5vw,72px); --maxw:1520px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--saffron);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Filmkorn */
+body::after{content:"";position:fixed;inset:-50%;z-index:300;pointer-events:none;opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* Papier – gleichmäßig über die ganze Breite (keine dunklen Randstreifen) */
+.paper{background-color:var(--paper);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.03' numOctaves='4'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .28 0 0 0 0 .1 0 0 0 .16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E")}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+
+/* ---------- Logo als Maske (beliebig einfärbbar) ---------- */
+.logo-mask{display:block;-webkit-mask:url(logo.png) center/contain no-repeat;mask:url(logo.png) center/contain no-repeat;background:currentColor;aspect-ratio:2000/1046}
+
+/* ---------- NAV ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:120;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 var(--gutter);transition:background .4s,border-color .4s}
+.nav.solid{background:rgba(9,22,24,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(237,219,127,.12)}
+.brand{display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--gold)}
+.brand .logo-mask{height:42px}
+.brand small{font-family:var(--sans);font-size:10px;letter-spacing:.24em;color:rgba(237,219,127,.7)}
+.nav ul{list-style:none;display:flex;gap:clamp(18px,2.4vw,38px);align-items:center}
+.nav ul a{font-family:var(--sans);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#f1e7cd;padding:8px 0;position:relative}
+.nav ul a::after{content:"";position:absolute;left:0;right:100%;bottom:2px;height:1px;background:var(--gold);transition:right .4s var(--ease)}
+.nav ul a:hover::after,.nav ul a[aria-current]::after{right:0}
+.nav ul a[aria-current]{color:var(--gold)}
+.nav .nav-cta{color:var(--gold)}
+.burger{display:none;width:44px;height:44px;position:relative;z-index:2}
+.burger span{position:absolute;left:10px;right:10px;height:1.5px;background:var(--gold);transition:.4s var(--ease)}
+.burger span:nth-child(1){top:16px}.burger span:nth-child(2){top:26px}
+.nav.open .burger span:nth-child(1){top:21px;transform:rotate(45deg)}
+.nav.open .burger span:nth-child(2){top:21px;transform:rotate(-45deg)}
+
+/* ---------- BUTTONS: eckig, Druck-Stil mit Eck-Markierungen ---------- */
+.btn{--c:var(--ink);--on:var(--paper-2);position:relative;display:inline-flex;align-items:center;gap:14px;
+  font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;
+  padding:17px 26px;color:var(--c);border:1px solid var(--c);background:transparent;transition:color .35s,background .35s var(--ease)}
+.btn::before,.btn::after{content:"";position:absolute;width:9px;height:9px;border:1.5px solid var(--c);transition:transform .35s var(--ease)}
+.btn::before{top:-5px;left:-5px;border-right:0;border-bottom:0}
+.btn::after{bottom:-5px;right:-5px;border-left:0;border-top:0}
+.btn:hover{background:var(--c);color:var(--on)}
+.btn:hover::before{transform:translate(-3px,-3px)}
+.btn:hover::after{transform:translate(3px,3px)}
+.btn .arr{display:inline-block;width:26px;height:1px;background:currentColor;position:relative;flex-shrink:0;transition:transform .35s var(--ease)}
+.btn .arr::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.btn:hover .arr{transform:translateX(6px)}
+.btn.solid{background:var(--c);color:var(--on)}
+.btn.solid:hover{background:transparent;color:var(--c)}
+.btn.gold{--c:var(--gold);--on:var(--night)}
+.btn.red{--c:var(--red);--on:#fff}
+.btn.paper{--c:var(--paper-2);--on:var(--chili)}
+.btn.sm{padding:11px 16px;font-size:11px}
+.link{font-family:var(--sans);font-size:12px;letter-spacing:.22em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:4px}
+
+/* ---------- Ornament-Ecken (wie auf der gedruckten Karte) ---------- */
+.frame{position:relative}
+.frame > .orn{position:absolute;width:clamp(44px,5vw,74px);height:clamp(44px,5vw,74px);color:var(--saffron);pointer-events:none}
+.frame > .orn.tl{top:0;left:0}
+.frame > .orn.tr{top:0;right:0;transform:scaleX(-1)}
+.frame > .orn.bl{bottom:0;left:0;transform:scaleY(-1)}
+.frame > .orn.br{bottom:0;right:0;transform:scale(-1,-1)}
+
+/* Kicker / Sperrschrift */
+.kicker{font-family:var(--sans);font-size:12px;letter-spacing:.38em;text-transform:uppercase;display:flex;align-items:center;gap:14px}
+.kicker::before{content:"";width:36px;height:1px;background:currentColor}
+.spaced{font-family:var(--serif);font-weight:600;letter-spacing:.32em;text-transform:uppercase}
+.hand{font-family:var(--hand);font-weight:700;line-height:1}
+.dev{font-family:var(--dev)}
+
+/* gerissene Kanten */
+.tear{position:absolute;left:0;right:0;height:40px;pointer-events:none;z-index:3}
+.tear.top{top:-39px}.tear.bottom{bottom:-39px;transform:scaleY(-1)}
+.tear svg{width:100%;height:100%;display:block}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(36px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+
+/* ---------- FOOTER ---------- */
+.foot{background:#071416;color:rgba(239,230,207,.62);font-family:var(--sans);font-size:13px;padding:70px var(--gutter) 34px}
+.foot-in{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.foot .logo-mask{height:56px;color:var(--gold);margin-bottom:14px;width:auto}
+.foot h5{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:14px}
+.foot a{display:block;padding:4px 0;transition:color .3s}
+.foot a:hover{color:var(--gold)}
+.legal{max-width:var(--maxw);margin:46px auto 0;padding-top:22px;border-top:1px solid rgba(237,219,127,.12);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12px}
+
+/* ---------- Formulare (eckig, Unterstrich) ---------- */
+.field{display:flex;flex-direction:column;gap:8px}
+.field > span{font-family:var(--sans);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft)}
+.field input,.field select,.field textarea{background:transparent;border:0;border-bottom:1px solid var(--ink);padding:10px 0;font-family:var(--body);font-size:19px;color:var(--ink);border-radius:0;outline:none;transition:border-color .3s}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--red);box-shadow:0 1px 0 var(--red)}
+.field textarea{resize:vertical;min-height:90px}
+.field small{font-family:var(--sans);font-size:12px;color:var(--chili-2);min-height:16px}
+
+/* Stempel */
+.stamp-c{display:grid;place-items:center;text-align:center;border-radius:50%;border:2px solid currentColor;position:relative}
+.stamp-c::before{content:"";position:absolute;inset:6px;border-radius:50%;border:1px dashed currentColor;opacity:.6}
+
+@media (max-width:980px){
+  .nav ul{position:fixed;top:0;left:0;width:100vw;height:100vh;height:100dvh;flex-direction:column;justify-content:center;gap:30px;background:rgba(7,20,22,.98);opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s}
+  .nav ul a{font-family:var(--serif);font-size:34px;letter-spacing:.04em;text-transform:none}
+  .nav.open ul{opacity:1;visibility:visible}
+  .burger{display:block}
+  .foot-in{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){.foot-in{grid-template-columns:1fr}.btn{padding:15px 20px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+.nav .lang-sw{display:flex;align-items:center;gap:6px}.nav .lang-sw a{opacity:.55;letter-spacing:.14em}.nav .lang-sw a[aria-current]{opacity:1;color:var(--gold)}.nav .lang-sw a::after{display:none}.nav .lang-sw span{color:rgba(241,231,205,.35);font-size:.9em}

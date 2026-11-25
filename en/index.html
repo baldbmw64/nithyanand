@@ -325,7 +325,12 @@ footer{background:#081a1c;color:rgba(239,230,207,.7);padding:70px clamp(20px,5vw
   .fields div:first-child{grid-column:1/-1}
   .stops .dish{font-size:23px}
   .foot{grid-template-columns:1fr}
-  .s1 .note{position:static;margin-bottom:20px}
+  .s1 .note{display:none}
+  .s1 .grid-2 > .photo-col{order:2;margin-top:10px}
+  .s2 .note{position:static;display:block;text-align:center;margin:56px 0 6px;transform:rotate(-5deg)}
+  .om-stamp{display:none}
+  .thali{width:86%;margin:0 auto}
+  .thali .leaf{right:-2%}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
@@ -646,29 +651,41 @@ footer{background:#081a1c;color:rgba(239,230,207,.7);padding:70px clamp(20px,5vw
     }
     trail.setAttribute('d', d); ghost.setAttribute('d', d); maskp.setAttribute('d', d);
     L = trail.getTotalLength();
+    /* Flugbahn einmal vorberechnen – beim Scrollen keine SVG-Messungen mehr */
+    const step = 4; pts2 = [];
+    for (let l = 0; l <= L; l += step) { const q = trail.getPointAtLength(l); pts2.push(q.x, q.y); }
+    builtW = innerWidth; builtH = jr.height;
     update();
   }
-  function lenAtY(y) {
-    let lo = 0, hi = L;
-    for (let i = 0; i < 22; i++) { const m = (lo + hi) / 2; trail.getPointAtLength(m).y < y ? lo = m : hi = m; }
+  let pts2 = [], builtW = 0, builtH = 0;
+  const lite = matchMedia('(max-width: 980px), (pointer: coarse)').matches;
+  if (lite) trail.removeAttribute('mask'); /* Handy: Spur sofort sichtbar, nur das Flugzeug bewegt sich */
+  function idxAtY(y) {
+    let lo = 0, hi = pts2.length / 2 - 1;
+    while (lo < hi) { const m = (lo + hi) >> 1; pts2[m * 2 + 1] < y ? lo = m + 1 : hi = m; }
     return lo;
   }
 
+  let queued = false;
   function update() {
+    queued = false;
     const y = scrollY;
     nav.classList.toggle('scrolled', y > 40);
-    if (!L) return;
+    if (!L || !pts2.length) return;
     const jr = journey.getBoundingClientRect();
     const target = innerHeight * .55 - jr.top;
-    const len = target <= 0 ? 0 : target >= jr.height ? L : lenAtY(target);
-    maskp.style.strokeDasharray = `${len} ${L + 10}`;
-    const p = trail.getPointAtLength(len), p2 = trail.getPointAtLength(Math.min(L, len + 2));
-    const ang = Math.atan2(p2.y - p.y, p2.x - p.x) * 180 / Math.PI;
-    jet.setAttribute('transform', `translate(${p.x},${p.y}) rotate(${ang + 90})`);
+    const n = pts2.length / 2 - 1;
+    const i = target <= 0 ? 0 : target >= jr.height ? n : idxAtY(target);
+    if (!lite) maskp.style.strokeDasharray = `${i * 4} ${L + 10}`;
+    const j = Math.min(n, i + 1), k = i === j ? Math.max(0, i - 1) : i;
+    const ang = Math.atan2(pts2[j * 2 + 1] - pts2[k * 2 + 1], pts2[j * 2] - pts2[k * 2]) * 180 / Math.PI;
+    jet.setAttribute('transform', `translate(${pts2[i * 2]},${pts2[i * 2 + 1]}) rotate(${ang + 90})`);
     jet.style.opacity = target > 0 && target < jr.height ? 1 : 0;
   }
-  addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
-  addEventListener('resize', build);
+  addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(update); } }, { passive: true });
+  /* iOS feuert beim Ein-/Ausblenden der Adressleiste "resize" – nur bei echter Größenänderung neu bauen */
+  let rt;
+  addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { if (innerWidth !== builtW || Math.abs(journey.offsetHeight - builtH) > 40) build(); }, 200); });
   addEventListener('load', build);
   document.fonts && document.fonts.ready.then(build);
 })();

@@ -219,6 +219,7 @@ mark{background:rgba(228,180,69,.6);color:inherit;padding:0 2px}
 
 .toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,20px);opacity:0;z-index:110;padding:12px 20px;background:var(--paper-2);border:1px solid var(--ink);font-family:var(--sans);font-size:13px;transition:.4s var(--ease);pointer-events:none;white-space:nowrap}
 .toast.show{opacity:1;transform:translate(-50%,0)}
+.bon.show ~ .toast{bottom:132px;max-width:calc(100% - 32px);text-align:center}
 .toast b{font-family:var(--hand);font-size:21px;color:var(--red)}
 
 @media (min-width:1700px){:root{--maxw:1640px}}
@@ -340,7 +341,7 @@ mark{background:rgba(228,180,69,.6);color:inherit;padding:0 2px}
 </footer>
 
 <button class="bon" id="bonBtn" type="button" aria-controls="receipt">
-  <span><span class="k" data-t="bonK">YOUR LIST</span><br><span class="cnt" id="bonCnt">0</span></span>
+  <span><span class="k" data-t="bonK">YOUR SELECTION</span><br><span class="cnt" id="bonCnt">0</span></span>
   <span class="sum" id="bonSum">€0.00</span>
   <span class="open" data-t="bonOpen">View</span>
 </button>
@@ -349,7 +350,7 @@ mark{background:rgba(228,180,69,.6);color:inherit;padding:0 2px}
   <div class="rc-head">
     <button class="rc-close" id="closeRc" type="button" aria-label="Close">✕</button>
     <span class="logo-mask"></span>
-    <b data-t="rcH">YOUR LIST</b>
+    <b data-t="rcH">YOUR SELECTION</b>
     <small data-t="rcP">Personal wish list · not an order</small>
   </div>
   <div class="rc-list" id="rcList"></div>
@@ -379,17 +380,17 @@ const T={
     searchLbl:'Gericht suchen',ph:'Gericht, Zutat oder Nummer …',clearQ:'Löschen',emptyH:'Hier ist der Teller leer …',emptyP:'Zu diesen Filtern haben wir leider nichts gefunden.',reset:'Filter zurücksetzen',
     legendH:'Allergene',legendS:'Alle 14 anzeigen',legendNote:'Fragen Sie uns gern – wir beraten Sie persönlich zu Allergien und Unverträglichkeiten.',
     bandH:'Hunger bekommen?<br><em>Ihr Tisch wartet.</em>',bandP:'Launhardtstraße 2–4, 60314 Frankfurt · Mittagstisch Mo – Fr, 11:00 – 14:30 Uhr.',bandCta:'Tisch reservieren',bandCat:'Catering anfragen',
-    bonK:'IHR BON',bonOpen:'Ansehen',rcH:'IHR BON',rcP:'Persönliche Merkliste · keine Bestellung',total:'SUMME',hint:'Zeigen Sie die Liste einfach unserem Service – wir kümmern uns um den Rest.',clear:'Leeren',waiter:'Dem Service zeigen',
+    bonK:'IHRE AUSWAHL',bonOpen:'Ansehen',rcH:'IHRE AUSWAHL',rcP:'Persönliche Merkliste · keine Bestellung',total:'SUMME',hint:'Zeigen Sie die Liste einfach unserem Service – wir kümmern uns um den Rest.',clear:'Leeren',waiter:'Dem Service zeigen',
     waiterH:'Namaskara! Wir hätten gern:',back:'Zurück zur Karte',drinks:'Getränke',drinksSub:'Von Lassi bis Kingfisher.',filter:'Filter',veg:'Vegetarisch',hot:'Scharf',without:'Ohne',
-    dishes:n=>`${n} Treffer`,inclRice:'inkl. Reis',perDish:'je Gericht',add:'Merken',added:n=>`<b>${n}</b> steht auf Ihrem Bon`,
+    dishes:n=>`${n} Treffer`,inclRice:'inkl. Reis',perDish:'je Gericht',add:'Merken',added:n=>`<b>${n}</b> ist in Ihrer Auswahl`,
     emptyTray:['Noch leer.','Tippen Sie bei einem Gericht auf „Merken“.'],open:'Jetzt geöffnet',closed:'Mittagstisch Mo – Fr',vegTag:'Veg',hotTag:'Scharf'},
   en:{headSub:'INDIAN SPECIALITIES',sub:'LUNCH MENU',tag:'From 11:00 am to 2:30 pm · every dish served with rice',picksTitle:'FIRST TIME HERE?',picksHand:'Our classics',
     searchLbl:'Search dishes',ph:'Dish, ingredient or number …',clearQ:'Clear',emptyH:'This plate is empty …',emptyP:'Nothing matches these filters.',reset:'Reset filters',
     legendH:'Allergens',legendS:'Show all 14',legendNote:'Just ask us – we are happy to advise you personally on allergies and intolerances.',
     bandH:'Feeling hungry?<br><em>Your table awaits.</em>',bandP:'Launhardtstraße 2–4, 60314 Frankfurt · Lunch Mon – Fri, 11:00 am – 2:30 pm.',bandCta:'Book a table',bandCat:'Catering enquiry',
-    bonK:'YOUR LIST',bonOpen:'View',rcH:'YOUR LIST',rcP:'Personal wish list · not an order',total:'TOTAL',hint:'Simply show this list to our staff – we will take care of the rest.',clear:'Clear',waiter:'Show to staff',
+    bonK:'YOUR SELECTION',bonOpen:'View',rcH:'YOUR SELECTION',rcP:'Personal wish list · not an order',total:'TOTAL',hint:'Simply show this list to our staff – we will take care of the rest.',clear:'Clear',waiter:'Show to staff',
     waiterH:'Namaskara! We would like:',back:'Back to the menu',drinks:'Drinks',drinksSub:'From lassi to Kingfisher.',filter:'Filter',veg:'Vegetarian',hot:'Spicy',without:'No',
-    dishes:n=>`${n} ${n===1?'result':'results'}`,inclRice:'incl. rice',perDish:'per dish',add:'Save',added:n=>`<b>${n}</b> added to your list`,
+    dishes:n=>`${n} ${n===1?'result':'results'}`,inclRice:'incl. rice',perDish:'per dish',add:'Save',added:n=>`<b>${n}</b> added to your selection`,
     emptyTray:['Still empty.','Tap “Save” on any dish.'],open:'Open now',closed:'Lunch Mon – Fri',vegTag:'Veg',hotTag:'Spicy'}
 };
 const {$,$$}=NY;

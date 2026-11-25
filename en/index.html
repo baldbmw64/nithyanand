@@ -4,12 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<script src="../assets/gate.js"></script>
+<script src="../assets/gate.js?v=3"></script>
 <title>Nithyanand – spice. life. curry · South Indian Cuisine in Frankfurt</title>
 <meta name="description" content="A culinary journey from Frankfurt to Udupi. South Indian cuisine, catering and celebrations – Launhardtstraße 2–4, 60314 Frankfurt.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Caveat:wght@500;700&family=Jost:wght@400;500;600&family=Oswald:wght@500;600;700&family=Spectral:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
 <style>
 :root{
   --night:#0d2629;
@@ -265,35 +263,27 @@ section.station{position:relative;padding:clamp(110px,13vw,190px) clamp(20px,5vw
 .btn-solid{background:var(--gold);color:var(--night);border-color:var(--gold)}
 .btn-solid:hover{background:transparent;color:var(--gold)}
 
-/* ---------- PASSPORT ---------- */
-.passport-sec{position:relative;padding:150px clamp(20px,5vw,80px) 120px;color:var(--ink);overflow-x:clip}
-.passport-sec .grid-2{grid-template-columns:.8fr 1.2fr}
-.booklet{position:relative;width:min(340px,80%);aspect-ratio:.7;margin:0 auto;border-radius:6px 16px 16px 6px;background:linear-gradient(135deg,#6e1712,#4a0d0a);box-shadow:0 40px 70px rgba(60,20,10,.45),inset 8px 0 0 rgba(0,0,0,.25),inset 10px 0 0 rgba(255,255,255,.05);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transform:rotate(-8deg);transition:transform .8s var(--ease)}
-.booklet:hover{transform:rotate(-3deg) translateY(-8px)}
-.booklet img{width:72%;filter:sepia(1) saturate(2.4) hue-rotate(-12deg) brightness(.95)}
-.booklet .rp{font-family:var(--serif);letter-spacing:.32em;font-size:20px;color:#d7b25a}
-.booklet .lotus{width:56px;stroke:#d7b25a;fill:none;stroke-width:1.2}
-.passport-sec h2{font-family:var(--serif);font-size:clamp(40px,4.6vw,68px);font-weight:600;line-height:1;margin-bottom:16px}
-.passport-sec h2 .hand{font-size:.8em;color:var(--chili-2);display:block;margin-top:6px;font-weight:700}
-.passport-sec .lead{font-size:18px;line-height:1.7;max-width:520px;color:var(--ink-soft)}
-.stamps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,2vw,26px);margin-top:42px;max-width:640px}
-.stamp{aspect-ratio:1;position:relative;display:grid;place-items:center}
-.stamp .slot{position:absolute;inset:6%;border-radius:50%;border:1.5px dashed rgba(90,60,30,.35)}
-.stamp svg{width:100%;height:100%;opacity:0;transform:scale(1.8) rotate(var(--r,-10deg));transition:opacity .25s,transform .45s cubic-bezier(.3,1.6,.5,1);mix-blend-mode:multiply}
-.stamp.got svg{opacity:.85;transform:scale(1) rotate(var(--r,-10deg))}
-.stamp .cap{position:absolute;bottom:-28px;font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8a6d50}
-.progress-txt{margin-top:56px;font-family:var(--hand);font-size:30px;color:var(--chili-2)}
-
-/* passport counter pill */
-.pass-pill{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;align-items:center;gap:12px;padding:10px 18px 10px 10px;border-radius:999px;background:rgba(13,38,41,.86);backdrop-filter:blur(10px);color:#f3ead2;font-family:var(--sans);font-size:13px;letter-spacing:.04em;border:1px solid rgba(237,219,127,.3);box-shadow:0 14px 40px rgba(0,0,0,.35);transform:translateY(120px);transition:transform .7s var(--ease)}
-.pass-pill.show{transform:none}
-.pass-pill .dots{display:flex;gap:5px}
-.pass-pill .dots i{width:9px;height:9px;border-radius:50%;border:1px solid var(--gold);transition:.4s}
-.pass-pill .dots i.on{background:var(--gold);box-shadow:0 0 10px var(--gold)}
-.pass-pill .ic{width:30px;height:30px;border-radius:50%;background:var(--chili);display:grid;place-items:center;font-size:14px}
-.toast{position:fixed;left:50%;top:96px;transform:translate(-50%,-30px);opacity:0;z-index:70;padding:12px 22px;border-radius:999px;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:14px;box-shadow:0 18px 40px rgba(0,0,0,.35);transition:.6s var(--ease);pointer-events:none;display:flex;gap:10px;align-items:center;white-space:nowrap}
-.toast.show{opacity:1;transform:translate(-50%,0)}
-.toast b{font-family:var(--hand);font-size:22px;color:var(--chili-2);font-weight:700}
+/* ---------- MITTAGSTISCH ---------- */
+.lunch-sec{position:relative;padding:150px clamp(20px,5vw,80px) 120px;color:var(--ink);overflow-x:clip}
+.lunch-sec .grid-2{grid-template-columns:.8fr 1.2fr;align-items:center}
+.lunch-card{position:relative;width:min(340px,82%);aspect-ratio:.72;margin:0 auto;padding:34px 28px;background:#0d2629;color:#efe2c4;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 40px 70px rgba(13,38,41,.35);transform:rotate(-3deg);transition:transform .5s var(--ease)}
+.lunch-card:hover{transform:rotate(0) translateY(-6px)}
+.lunch-card::before{content:"";position:absolute;inset:12px;border:1px solid rgba(228,180,69,.45)}
+.lunch-card .k{font-family:var(--sans);font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+.lunch-card .days{font-family:var(--serif);font-size:44px;font-weight:600;line-height:1;margin:18px 0 6px}
+.lunch-card .time{font-family:var(--serif);font-size:30px;font-style:italic;color:var(--gold)}
+.lunch-card .hand{font-family:var(--hand);font-size:28px;color:#f0c35a;margin-top:26px;transform:rotate(-4deg)}
+.lunch-card svg{width:54px;stroke:var(--gold);fill:none;stroke-width:1.2;margin-top:22px}
+.lunch-sec h2{font-family:var(--serif);font-size:clamp(40px,4.6vw,68px);font-weight:600;line-height:1;margin-bottom:16px}
+.lunch-sec h2 .hand{font-size:.8em;color:var(--chili-2);display:block;margin-top:6px;font-weight:700}
+.lunch-sec .lead{font-size:18px;line-height:1.7;max-width:540px;color:var(--ink-soft)}
+.lunch-prices{list-style:none;margin:36px 0 40px;max-width:560px;border-top:1px solid rgba(60,40,20,.35)}
+.lunch-prices li{display:flex;align-items:baseline;gap:14px;padding:16px 0;border-bottom:1px solid rgba(60,40,20,.2);font-family:var(--serif);font-size:24px}
+.lunch-prices li small{font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8a6d50}
+.lunch-prices li .dots{flex:1;border-bottom:1.5px dotted rgba(60,40,20,.4);transform:translateY(-6px)}
+.lunch-sec .btn{background:var(--night);color:#f3ead2;border-color:var(--night)}
+.lunch-sec .btn:hover{background:var(--chili);border-color:var(--chili);color:#fff}
+.lunch-prices li b{font-weight:600;color:var(--chili-2);font-variant-numeric:tabular-nums}
 
 /* ---------- FOOTER ---------- */
 footer{background:#081a1c;color:rgba(239,230,207,.7);padding:70px clamp(20px,5vw,80px) 40px;font-family:var(--sans);font-size:14px;position:relative}
@@ -313,7 +303,7 @@ footer{background:#081a1c;color:rgba(239,230,207,.7);padding:70px clamp(20px,5vw
   .hero{grid-template-columns:1fr;padding-top:130px;gap:60px}
   .hero-bg{inset:0}
   .pass-wrap{order:2}
-  .grid-2,.s2 .grid-2,.s3 .grid-2,.s4 .grid-2,.passport-sec .grid-2{grid-template-columns:1fr}
+  .grid-2,.s2 .grid-2,.s3 .grid-2,.s4 .grid-2,.lunch-sec .grid-2{grid-template-columns:1fr}
   .s3 .photo-col{max-width:520px;margin:0 auto 40px}
   .seeyou{right:0;top:-100px;width:120px}
   .foot{grid-template-columns:1fr 1fr}
@@ -334,7 +324,6 @@ footer{background:#081a1c;color:rgba(239,230,207,.7);padding:70px clamp(20px,5vw
   .fields{grid-template-columns:1fr 1fr}
   .fields div:first-child{grid-column:1/-1}
   .stops .dish{font-size:23px}
-  .pass-pill .lbl{display:none}
   .foot{grid-template-columns:1fr}
   .s1 .note{position:static;margin-bottom:20px}
 }
@@ -553,35 +542,24 @@ footer{background:#081a1c;color:rgba(239,230,207,.7);padding:70px clamp(20px,5vw
   </section>
 </main>
 
-<!-- ============ PASSPORT ============ -->
-<section class="passport-sec paper-tex" id="pass-sec">
+<!-- ============ MITTAGSTISCH ============ -->
+<section class="lunch-sec paper-tex" id="mittag">
   <div class="tear top" data-color="#e9d6ae"></div>
   <div class="grid-2">
     <div class="rv">
-      <div class="booklet">
-        <img src="../assets/logo.png" alt="">
-        <svg class="lotus" viewBox="0 0 64 40"><use href="#i-lotus"/></svg>
-        <div class="rp">PASSPORT</div>
+      <div class="lunch-card">
+        <div class="k">Lunch menu</div>
+        <div class="days">Mon – Fri</div>
+        <div class="time">11 am – 2:30 pm</div>
+        <svg viewBox="0 0 64 40"><use href="#i-lotus"/></svg>
+        <div class="hand">served with rice</div>
       </div>
     </div>
     <div class="rv d1">
-      <h2>Your passport<span class="hand">Collect stamps on your culinary journey!</span></h2>
-      <p class="lead">Every visit earns you a stamp. Collected all four? Then your next dessert is on the house – gulab jamun with love from Udupi.</p>
-      <div class="stamps" id="stamps">
-        <div class="stamp" style="--r:-12deg"><span class="slot"></span>
-          <svg viewBox="0 0 120 120"><defs><path id="s1" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><g fill="none" stroke="#2f4a6a" stroke-width="2.5"><circle cx="60" cy="60" r="56"/><circle cx="60" cy="60" r="36"/></g><text font-family="Jost" font-size="10" letter-spacing="3" fill="#2f4a6a"><textPath href="#s1">STOP 1 · THE COAST · UDUPI ·</textPath></text><use href="#i-palm" x="38" y="38" width="44" height="44" color="#2f4a6a"/></svg>
-          <span class="cap">Coast</span></div>
-        <div class="stamp" style="--r:8deg"><span class="slot"></span>
-          <svg viewBox="0 0 120 120"><defs><path id="s2" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><g fill="none" stroke="#8a4a10" stroke-width="2.5"><circle cx="60" cy="60" r="56"/><circle cx="60" cy="60" r="36"/></g><text font-family="Jost" font-size="10" letter-spacing="3" fill="#8a4a10"><textPath href="#s2">STOP 2 · THE KITCHEN · DOSA ·</textPath></text><use href="#i-dosa" x="38" y="38" width="44" height="44" color="#8a4a10"/></svg>
-          <span class="cap">Kitchen</span></div>
-        <div class="stamp" style="--r:-6deg"><span class="slot"></span>
-          <svg viewBox="0 0 120 120"><defs><path id="s3" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><g fill="none" stroke="#8e1f1a" stroke-width="2.5"><circle cx="60" cy="60" r="56"/><circle cx="60" cy="60" r="36"/></g><text font-family="Jost" font-size="10" letter-spacing="3" fill="#8e1f1a"><textPath href="#s3">STOP 3 · THE FEAST · DIYA ·</textPath></text><use href="#i-diya" x="38" y="38" width="44" height="44" color="#8e1f1a"/></svg>
-          <span class="cap">Feast</span></div>
-        <div class="stamp" style="--r:14deg"><span class="slot"></span>
-          <svg viewBox="0 0 120 120"><defs><path id="s4" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><g fill="none" stroke="#1f4a45" stroke-width="2.5"><circle cx="60" cy="60" r="56"/><circle cx="60" cy="60" r="36"/></g><text font-family="Jost" font-size="10" letter-spacing="3" fill="#1f4a45"><textPath href="#s4">STOP 4 · FRANKFURT · FRA ·</textPath></text><use href="#i-sky" x="38" y="38" width="44" height="44" color="#1f4a45"/></svg>
-          <span class="cap">Frankfurt</span></div>
-      </div>
-      <p class="progress-txt" id="progressTxt">Scroll through the journey – the stamps collect themselves.</p>
+      <h2>Lunch<span class="hand">South Indian, on your lunch break.</span></h2>
+      <p class="lead">Monday to Friday we cook fresh at lunchtime: curries from the pot, dishes from the tandoor – every main course comes to the table with rice.</p>
+      <ul class="lunch-prices"><li><span>Vegetarian<br><small>e.g. Aloo Gobi Masala</small></span><span class="dots"></span><b>€10.00</b></li><li><span>Chicken<br><small>from pot & tandoor</small></span><span class="dots"></span><b>€12.00</b></li><li><span>Lamb<br><small>slow-braised</small></span><span class="dots"></span><b>€13.90</b></li><li><span>Fish<br><small>halibut curry</small></span><span class="dots"></span><b>€13.90</b></li></ul>
+      <a href="speisekarte.html" class="btn btn-solid">See the lunch menu <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </section>
@@ -593,11 +571,9 @@ footer{background:#081a1c;color:rgba(239,230,207,.7);padding:70px clamp(20px,5vw
     <div><h5>Discover</h5><a href="speisekarte.html">Menu</a><a href="catering.html">Catering</a><a href="feste.html">Celebrations & Events</a><a href="#frankfurt" data-reserve>Reserve a table</a></div>
     <div><h5>Follow</h5><a href="#">Instagram</a><a href="#">Google</a><a href="#">TripAdvisor</a></div>
   </div>
-  <div class="legal"><span>© 2026 Nithyanand · Frankfurt am Main</span><span><a href="#">Legal notice</a> · <a href="#">Privacy</a></span></div>
+  <div class="legal"><span>© 2026 Nithyanand · Frankfurt am Main</span><span><a href="impressum.html">Legal notice</a> · <a href="datenschutz.html">Privacy</a></span></div>
 </footer>
 
-<div class="pass-pill" id="pill"><span class="ic">✈</span><span class="lbl">Passport</span><span class="dots" id="dots"><i></i><i></i><i></i><i></i></span></div>
-<div class="toast" id="toast">Stamp collected: <b id="toastTxt"></b></div>
 
 <script>
 (() => {
@@ -678,25 +654,9 @@ footer{background:#081a1c;color:rgba(239,230,207,.7);padding:70px clamp(20px,5vw
     return lo;
   }
 
-  /* stamps */
-  const stations = $$('[data-stamp]'), stampEls = $$('.stamp'), dots = $$('#dots i');
-  const names = ['Udupi', 'The Kitchen', 'The Feast', 'Frankfurt'];
-  const got = new Set(); const toast = $('#toast'); let tt;
-  function collect(i) {
-    if (got.has(i)) return; got.add(i);
-    stampEls[i].classList.add('got'); dots[i].classList.add('on');
-    $('#toastTxt').textContent = names[i];
-    toast.classList.add('show'); clearTimeout(tt); tt = setTimeout(() => toast.classList.remove('show'), 1900);
-    const n = got.size;
-    $('#progressTxt').textContent = n < 4 ? `${n} of 4 stamps – the journey continues …` : 'All 4 stamps! Time for a real visit. ✦';
-  }
-
-  const pill = $('#pill');
-  pill.onclick = () => $('#pass-sec').scrollIntoView({ behavior: 'smooth' });
   function update() {
     const y = scrollY;
     nav.classList.toggle('scrolled', y > 40);
-    pill.classList.toggle('show', y > innerHeight * .6);
     if (!L) return;
     const jr = journey.getBoundingClientRect();
     const target = innerHeight * .55 - jr.top;
@@ -706,7 +666,6 @@ footer{background:#081a1c;color:rgba(239,230,207,.7);padding:70px clamp(20px,5vw
     const ang = Math.atan2(p2.y - p.y, p2.x - p.x) * 180 / Math.PI;
     jet.setAttribute('transform', `translate(${p.x},${p.y}) rotate(${ang + 90})`);
     jet.style.opacity = target > 0 && target < jr.height ? 1 : 0;
-    stations.forEach(s => { const r = s.getBoundingClientRect(); if (r.top < innerHeight * .5) collect(+s.dataset.stamp); });
   }
   addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
   addEventListener('resize', build);

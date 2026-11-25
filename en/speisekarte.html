@@ -8,7 +8,7 @@
 <title>Menu · Lunch – Nithyanand Frankfurt</title>
 <meta name="description" content="Lunch at Nithyanand: Indian curries served with rice, naan, lassi and more. Mon–Fri 11:00 am – 2:30 pm, Launhardtstraße 2–4, Frankfurt.">
 <link rel="stylesheet" href="../assets/fonts/fonts.css">
-<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/site.css?v=4">
 <style>
 html{scroll-padding-top:170px}
 
@@ -208,7 +208,7 @@ mark{background:rgba(228,180,69,.6);color:inherit;padding:0 2px}
 .waiter{position:fixed;inset:0;z-index:200;background:var(--black);color:#f1e3c6;display:none;flex-direction:column;padding:50px clamp(20px,6vw,90px);overflow:auto}
 .waiter.show{display:flex}
 .waiter .spaced{color:var(--saffron);font-size:14px}
-.waiter h2{font-family:var(--hand);font-size:40px;color:var(--red);margin-top:10px}
+.waiter h2{font-family:var(--hand);font-size:40px;line-height:1.1;color:var(--red);margin-top:10px}
 .waiter ol{list-style:none;margin:26px 0;flex:1}
 .waiter li{display:grid;grid-template-columns:90px 80px 1fr;gap:10px;align-items:baseline;padding:18px 0;border-bottom:1px dashed rgba(234,122,42,.3)}
 .waiter .wq{font-family:var(--ticket);font-size:42px;color:var(--gold)}
@@ -365,14 +365,14 @@ mark{background:rgba(228,180,69,.6);color:inherit;padding:0 2px}
 </aside>
 <div class="waiter" id="waiter" role="dialog" aria-modal="true">
   <span class="spaced">NITHYANAND</span>
-  <h2 data-t="waiterH">Namaskara! We would like:</h2>
+  <h2 data-t="waiterH">Namaskara!<br>We would like:</h2>
   <ol id="waiterList"></ol>
   <button class="btn gold" id="closeWaiter" type="button"><span data-t="back">Back to the menu</span></button>
 </div>
 <div class="toast" id="toast"></div>
 
 <script src="../assets/menu-data.js"></script>
-<script src="../assets/site.js"></script>
+<script src="../assets/site.js?v=4"></script>
 <script>
 const CHILI='<svg class="chili" viewBox="0 0 13 20" aria-hidden="true"><path d="M7 4c3 1 5 4 4 9-1 4-5 6-8 6 2-2 3-5 3-8S5 6 7 4z" fill="currentColor"/><path d="M7 4c0-2 1-3 3-3" stroke="#3c5b2b" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>';
 const T={
@@ -381,7 +381,7 @@ const T={
     legendH:'Allergene',legendS:'Alle 14 anzeigen',legendNote:'Fragen Sie uns gern – wir beraten Sie persönlich zu Allergien und Unverträglichkeiten.',
     bandH:'Hunger bekommen?<br><em>Ihr Tisch wartet.</em>',bandP:'Launhardtstraße 2–4, 60314 Frankfurt · Mittagstisch Mo – Fr, 11:00 – 14:30 Uhr.',bandCta:'Tisch reservieren',bandCat:'Catering anfragen',
     bonK:'IHRE AUSWAHL',bonOpen:'Ansehen',rcH:'IHRE AUSWAHL',rcP:'Persönliche Merkliste · keine Bestellung',total:'SUMME',hint:'Zeigen Sie die Liste einfach unserem Service – wir kümmern uns um den Rest.',clear:'Leeren',waiter:'Dem Service zeigen',
-    waiterH:'Namaskara! Wir hätten gern:',back:'Zurück zur Karte',drinks:'Getränke',drinksSub:'Von Lassi bis Kingfisher.',filter:'Filter',veg:'Vegetarisch',hot:'Scharf',without:'Ohne',
+    waiterH:'Namaskara!<br>Wir hätten gern:',back:'Zurück zur Karte',drinks:'Getränke',drinksSub:'Von Lassi bis Kingfisher.',filter:'Filter',veg:'Vegetarisch',hot:'Scharf',without:'Ohne',
     dishes:n=>`${n} Treffer`,inclRice:'inkl. Reis',perDish:'je Gericht',add:'Merken',added:n=>`<b>${n}</b> ist in Ihrer Auswahl`,
     emptyTray:['Noch leer.','Tippen Sie bei einem Gericht auf „Merken“.'],open:'Jetzt geöffnet',closed:'Mittagstisch Mo – Fr',vegTag:'Veg',hotTag:'Scharf'},
   en:{headSub:'INDIAN SPECIALITIES',sub:'LUNCH MENU',tag:'From 11:00 am to 2:30 pm · every dish served with rice',picksTitle:'FIRST TIME HERE?',picksHand:'Our classics',
@@ -389,7 +389,7 @@ const T={
     legendH:'Allergens',legendS:'Show all 14',legendNote:'Just ask us – we are happy to advise you personally on allergies and intolerances.',
     bandH:'Feeling hungry?<br><em>Your table awaits.</em>',bandP:'Launhardtstraße 2–4, 60314 Frankfurt · Lunch Mon – Fri, 11:00 am – 2:30 pm.',bandCta:'Book a table',bandCat:'Catering enquiry',
     bonK:'YOUR SELECTION',bonOpen:'View',rcH:'YOUR SELECTION',rcP:'Personal wish list · not an order',total:'TOTAL',hint:'Simply show this list to our staff – we will take care of the rest.',clear:'Clear',waiter:'Show to staff',
-    waiterH:'Namaskara! We would like:',back:'Back to the menu',drinks:'Drinks',drinksSub:'From lassi to Kingfisher.',filter:'Filter',veg:'Vegetarian',hot:'Spicy',without:'No',
+    waiterH:'Namaskara!<br>We would like:',back:'Back to the menu',drinks:'Drinks',drinksSub:'From lassi to Kingfisher.',filter:'Filter',veg:'Vegetarian',hot:'Spicy',without:'No',
     dishes:n=>`${n} ${n===1?'result':'results'}`,inclRice:'incl. rice',perDish:'per dish',add:'Save',added:n=>`<b>${n}</b> added to your selection`,
     emptyTray:['Still empty.','Tap “Save” on any dish.'],open:'Open now',closed:'Lunch Mon – Fri',vegTag:'Veg',hotTag:'Spicy'}
 };
@@ -504,7 +504,7 @@ addEventListener('scroll',()=>requestAnimationFrame(spy),{passive:true});
 renderStatic();render();updateBon();
 if(/^#\d+$/.test(location.hash))setTimeout(()=>jumpTo(location.hash.slice(1)),400);
 </script>
-<script src="../assets/config.js"></script>
-<script src="../assets/forms.js"></script>
+<script src="../assets/config.js?v=4"></script>
+<script src="../assets/forms.js?v=4"></script>
 </body>
 </html>

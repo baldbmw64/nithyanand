@@ -148,6 +148,7 @@ body::after{
 .flight .jet circle{fill:var(--gold);opacity:.25}
 
 section.station{position:relative;padding:clamp(110px,13vw,190px) clamp(20px,5vw,80px)}
+.station > .grid-2{position:relative;z-index:7} /* Inhalte liegen über der Flugbahn */
 .tear{position:absolute;left:0;right:0;height:48px;z-index:4;pointer-events:none}
 .tear.top{top:-46px}
 .tear svg{width:100%;height:100%;display:block;filter:drop-shadow(0 -6px 6px rgba(0,0,0,.18))}
@@ -690,7 +691,7 @@ footer{background:#081a1c;color:rgba(239,230,207,.7);padding:70px clamp(20px,5vw
   document.fonts && document.fonts.ready.then(build);
 })();
 </script>
-<script src="assets/config.js"></script>
-<script src="assets/forms.js"></script>
+<script src="assets/config.js?v=4"></script>
+<script src="assets/forms.js?v=4"></script>
 </body>
 </html>
